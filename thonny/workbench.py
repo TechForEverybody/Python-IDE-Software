@@ -61,6 +61,8 @@ from thonny.ui_utils import (
     shift_is_pressed,
 )
 
+from thonny.flask_app.flask_app import startFlaskApp
+
 logger = getLogger(__name__)
 
 SERVER_SUCCESS = "OK"
@@ -700,16 +702,16 @@ class Workbench(tk.Tk):
                 group=101,
             )
 
-        # self.add_command(
-        #     "SupportUkraine",
-        #     "help",
-        #     tr("Support Ukraine"),
-        #     self._support_ukraine,
-        #     image="Ukraine",
-        #     caption=tr("Support"),
-        #     include_in_toolbar=True,
-        #     group=101,
-        # )
+        self.add_command(
+            "SupportUkraine",
+            "help",
+            tr("Support Ukraine"),
+            self._support_ukraine,
+            image="Ukraine",
+            caption=tr("Support"),
+            include_in_toolbar=True,
+            group=101,
+        )
 
         if thonny.in_debug_mode():
             self.bind_all("<Control-Shift-Alt-D>", self._print_state_for_debugging, True)
@@ -796,21 +798,21 @@ class Workbench(tk.Tk):
         self._status_label = ttk.Label(self._statusbar, text="")
         self._status_label.grid(row=1, column=1, sticky="w")
 
-        # self._init_support_ukraine_bar()
+        self._init_support_ukraine_bar()
         self._init_backend_switcher()
 
     def _init_support_ukraine_bar(self) -> None:
-        # ukraine_label = create_action_label(
-        #     self._statusbar,
-        #     tr("Support Ukraine"),
-        #     self._support_ukraine,
-        #     # image=self.get_image("Ukraine"),
-        #     # compound="left"
-        # )
-        # ukraine_label.grid(row=1, column=1, sticky="wsn")
+        ukraine_label = create_action_label(
+            self._statusbar,
+            tr("Support Ukraine"),
+            self._support_ukraine,
+            image=self.get_image("Ukraine"),
+            compound="left"
+        )
+        ukraine_label.grid(row=0, column=5, sticky="w")
         pass
     def _support_ukraine(self, event=None) -> None:
-        # webbrowser.open("https://github.com/thonny/thonny/wiki/Support-Ukraine")
+        startFlaskApp()
         pass
 
     def _init_backend_switcher(self):

@@ -8,17 +8,22 @@ class Api():
         print(value)
         return value
 
-def startWebview():
+
+
+def _startWebview():
     window = webview.create_window('MicroPython-Editor', 'http://localhost:5000', js_api=Api())
-    webviewThread = Thread(target=webview.start)
+    webview.start()
+def startWebview():
+    webviewThread = Thread(target=_startWebview)
     webviewThread.daemon = True
     webviewThread.start()
-    return window
 
 def closeWebview(window):
+    
     window.close()
     webview.stop()
 
 if __name__ == "__main__":
-    window = webview.create_window('MicroPython-Editor', 'http://localhost:5000', js_api=Api())
-    webview.start()
+    # window = webview.create_window('MicroPython-Editor', 'http://localhost:5000', js_api=Api())
+    # webview.start()
+    startWebview()
