@@ -1,4 +1,4 @@
-import ttkbootstrap as tk
+import tkinter as tk
 from tkinter import ttk
 
 from thonny.languages import tr
