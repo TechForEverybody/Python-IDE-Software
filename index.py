@@ -1,10 +1,20 @@
 from thonny import launch, report_time
 import webview
 from thonny.flask_app.flask_app import startFlaskApp
+from thonny.login_validator import openLoginScreen, LoginApp
 
-startFlaskApp()
-report_time("Before launch")
-launch()
+def main():
+    startFlaskApp()
+    report_time("Before launch")
+    launch()
+
+loginApp = LoginApp()
+print(loginApp.isLoggedIn())
+if loginApp.isLoggedIn():
+    main()
+else:
+    openLoginScreen(successFunction=main)
+
 # window = webview.create_window('MicroPython-Editor', 'https://innovator.educobot.com/tools/micropython-editor')
 # webview.start()
 

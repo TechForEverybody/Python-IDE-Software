@@ -1,5 +1,6 @@
 import webview
 from threading import Thread
+
 class Api():
     def log(self, value):
         print(value)
@@ -12,14 +13,13 @@ class Api():
 
 def _startWebview():
     window = webview.create_window('MicroPython-Editor', 'http://localhost:5000', js_api=Api())
-    webview.start()
+    webview.start(blocking=False)
 def startWebview():
     webviewThread = Thread(target=_startWebview)
     webviewThread.daemon = True
     webviewThread.start()
 
 def closeWebview(window):
-    
     window.close()
     webview.stop()
 

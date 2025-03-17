@@ -183,6 +183,7 @@ class CodeView(tktextext.EnhancedTextFrame):
         self._gutter.tag_raise("spacer")
 
     def get_content(self):
+        print("get_content", self.text.get("1.0", "end-1c"))
         return self.text.get("1.0", "end-1c")  # -1c because Text always adds a newline itself
 
     def detect_encoding(self, data):

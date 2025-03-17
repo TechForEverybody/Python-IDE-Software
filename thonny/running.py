@@ -520,6 +520,7 @@ class Runner:
         )
 
     def cmd_run_current_script(self) -> None:
+        # print(self)
         if get_workbench().in_simple_mode():
             get_workbench().hide_view("VariablesView")
         report_time("Before Run")
