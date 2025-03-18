@@ -1,5 +1,5 @@
 from thonny import launch, report_time
-from thonny.flask_app.flask_app import startFlaskApp
+from thonny.flask_app import startFlaskApp
 from thonny.login_validator import openLoginScreen, LoginApp
 
 def main():
