@@ -1,5 +1,4 @@
 from thonny import launch, report_time
-import webview
 from thonny.flask_app import startFlaskApp
 from thonny.login_validator import openLoginScreen, LoginApp
 

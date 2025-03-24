@@ -208,7 +208,7 @@ class BaseBackend(ABC):
         pass
 
     def _report_internal_exception(self, msg: str) -> None:
-        user_msg = "PROBLEM IN THONNY'S BACK-END: " + msg
+        user_msg = "PROBLEM IN INNOVATOR'S BACK-END: " + msg
         if sys.exc_info()[1]:
             err_msg = "\n".join(
                 traceback.format_exception_only(sys.exc_info()[0], sys.exc_info()[1])
