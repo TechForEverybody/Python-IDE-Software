@@ -1414,9 +1414,9 @@ class Workbench(tk.Tk):
 
     def get_default_syntax_theme(self) -> str:
         if self.uses_dark_ui_theme():
-            return "Default Dark Blue"
+            return "Default Dark"
         else:
-            return "Default Dark Blue"
+            return "Default Light"
 
     def uses_dark_ui_theme(self) -> bool:
         name = self._style.theme_use()

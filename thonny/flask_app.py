@@ -1,16 +1,16 @@
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify
 from flask_cors import CORS
 from threading import Thread
 from thonny import get_runner, get_workbench, get_shell
 
 
-FlaskAPP =Flask(__name__, static_folder='./static', template_folder='./templates')
+FlaskAPP =Flask(__name__)
 
 CORS(FlaskAPP, resources={r"/*": {"origins": "*"}})
 
 @FlaskAPP.route('/', methods=['GET'])
 def home():
-    return render_template("index.html")
+    return "it works"
 
 @FlaskAPP.route('/api/v1/esp32/deploy', methods=['POST'])
 def deploy():
