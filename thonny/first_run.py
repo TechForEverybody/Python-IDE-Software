@@ -13,7 +13,7 @@ class FirstRunWindow(tk.Tk):
         super().__init__(className="Thonny")
         ttk.Style().theme_use(ui_utils.get_default_basic_theme())
 
-        self.title("Welcome to Thonny!" + "   [portable]" if is_portable() else "")
+        self.title("Welcome to Innov8r!" + "   [portable]" if is_portable() else "")
         self.protocol("WM_DELETE_WINDOW", self.destroy)
         self.ok = False
 
@@ -26,7 +26,7 @@ class FirstRunWindow(tk.Tk):
 
         self.main_frame.rowconfigure(1, weight=1)
 
-        logo_file = os.path.join(os.path.dirname(__file__), "res", "thonny.png")
+        logo_file = os.path.join(os.path.dirname(__file__), "res", "innovator.png")
         self.logo = tk.PhotoImage(file=logo_file)
 
         logo_label = ttk.Label(self.main_frame, image=self.logo)
