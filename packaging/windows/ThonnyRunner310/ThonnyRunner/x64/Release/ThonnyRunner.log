@@ -1,0 +1,7 @@
+﻿LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/LTCG' specification
+  Generating code
+  0 of 1 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  ThonnyRunner.vcxproj -> C:\Users\shivk\OneDrive\Desktop\Shiv-eduCOBOT\Innovator-Robotics-AI-and-IOT\Innovator-Driver\packaging\windows\ThonnyRunner310\x64\Release\thonny.exe
